@@ -5,7 +5,7 @@
 
   tasks:
     - name: Backup SQLite Database
-      command: sqlite3 /path/to/your/database.db .dump > /tmp/database_backup.sql
+      command: C:\Users\inndata-adm-004\Downloads\sqlite-tools-win32-x86-3430100\sqlite-tools-win32-x86-3430100\sqlite3.exe
       args:
         creates: /tmp/database_backup.sql
 
@@ -19,6 +19,6 @@
         dest: /kap-user/desktop
 
     - name: Cleanup Temporary Files
-      file: C:\sqlite3\database.db
-        path: sqlite3
+        file: 
+        path: 
         state: absent
