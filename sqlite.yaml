@@ -19,6 +19,6 @@
         dest: /kap-user/desktop
 
     - name: Cleanup Temporary Files
-      file: 
-        path: 
+      file: C:\sqlite3\database.db
+        path: sqlite3
         state: absent
