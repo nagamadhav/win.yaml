@@ -5,7 +5,7 @@
 
   tasks:
     - name: Backup SQLite Database
-      command: C:\Users\inndata-adm-004\Downloads\sqlite-tools-win32-x86-3430100\sqlite-tools-win32-x86-3430100\sqlite3.exe
+      command: C:\sqlite3\database.db
       args:
         creates: /tmp/database_backup.sql
 
