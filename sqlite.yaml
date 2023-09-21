@@ -1,0 +1,24 @@
+---
+- name: Backup SQLite Database to SFTP
+  hosts: 10.10.5.184  # This playbook runs on the AWX control node
+  gather_facts: no
+
+  tasks:
+    - name: Backup SQLite Database
+      command: sqlite3 /path/to/your/database.db .dump > /tmp/database_backup.sql
+      args:
+        creates: /tmp/database_backup.sql
+
+    - name: Upload Backup to SFTP Server
+      community.general.sftp:
+        hostname: 10.10.5.76
+        port: 22  # SFTP port
+        username: kap-user
+        password: 123!@#
+        src: C:\Users\inndata-adm-004\Downloads\sqlite-tools-win32-x86-3430100\sqlite-tools-win32-x86-3430100\sqlite3.exe
+        dest: /kap-user/desktop
+
+    - name: Cleanup Temporary Files
+      file: desktop
+        path: /kap-user/
+        state: absent
