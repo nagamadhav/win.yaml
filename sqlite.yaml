@@ -19,6 +19,6 @@
         dest: /kap-user/desktop
 
     - name: Cleanup Temporary Files
-      file: desktop
-        path: /kap-user/
+      file: 
+        path: 
         state: absent
